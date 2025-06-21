@@ -54,6 +54,7 @@ def play_again():
     while play_again.upper() not in ["Y","N"]:
         play_again=input("Please enter either \"Y\" or \"N\" only:")
     if play_again.upper()=="Y":
+        print("\n"*100)
         play()
 play()
 play_again()
