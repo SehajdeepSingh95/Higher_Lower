@@ -54,7 +54,5 @@ while True:
         play_again=input("Please enter either \"Y\" or \"N\" only:")
     if play_again.upper()=="N":
         break
-
-
-
-
+    else:
+        print("\n"*100)
