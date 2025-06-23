@@ -1,7 +1,10 @@
 import art
+import os
 from game_data import data
 import random
+highest_score=0
 def play():
+    global highest_score
     account_a = random.choice(data)
     account_b = random.choice(data)
     while account_a == account_b:
@@ -16,6 +19,7 @@ def play():
         account_country = account_a["country"]
         A = account_a["follower_count"]
         print(art.logo)
+        print(f"Your Highest Score is {highest_score}")
         print(f"Your Score is: {score}")
         print(f"Compare A={account_name} a {account_description} from {account_country}")
         account_name = account_b["name"]
@@ -45,6 +49,7 @@ def play():
                 print(f"Your final score is: {score}")
                 print("Thanks for playing!")
                 break
+        highest_score=score
         account_a = account_b
         account_b = random.choice(data)
         while account_a == account_b:
@@ -54,7 +59,7 @@ def play_again():
     while play_again.upper() not in ["Y","N"]:
         play_again=input("Please enter either \"Y\" or \"N\" only:")
     if play_again.upper()=="Y":
-        print("\n"*100)
+        os.system("cls" if os.name == "nt" else "clear")
         play()
 play()
 play_again()
