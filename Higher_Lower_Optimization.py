@@ -62,5 +62,6 @@ def play_again():
         play_again=input("Please enter either \"Y\" or \"N\" only:")
     if play_again.upper()=="Y":
         play()
+        play_again()
 play()
 play_again()
