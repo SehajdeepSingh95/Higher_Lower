@@ -50,17 +50,17 @@ def play():
                 print(f"Your final score is: {score}")
                 print("Thanks for playing!")
                 break
-        if score>=score:
+        if score>=highest_score:
             highest_score=score
         account_a = account_b
         account_b = random.choice(data)
         while account_a == account_b:
             account_b = random.choice(data)
 def play_again():
-    play_again=input("Do you want to play again? Type \"Y\" or \"N\":")
-    while play_again.upper() not in ["Y","N"]:
-        play_again=input("Please enter either \"Y\" or \"N\" only:")
-    if play_again.upper()=="Y":
+    repeat=input("Do you want to play again? Type \"Y\" or \"N\":")
+    while repeat.upper() not in ["Y","N"]:
+        repeat=input("Please enter either \"Y\" or \"N\" only:")
+    if repeat.upper()=="Y":
         play()
         play_again()
 play()
