@@ -14,6 +14,7 @@ def play():
             break
     score = 0
     while True:
+        os.system("cls" if os.name == "nt" else "clear")
         account_name = account_a["name"]
         account_description = account_a["description"]
         account_country = account_a["country"]
@@ -49,7 +50,8 @@ def play():
                 print(f"Your final score is: {score}")
                 print("Thanks for playing!")
                 break
-        highest_score=score
+        if score>=score:
+            highest_score=score
         account_a = account_b
         account_b = random.choice(data)
         while account_a == account_b:
@@ -59,7 +61,6 @@ def play_again():
     while play_again.upper() not in ["Y","N"]:
         play_again=input("Please enter either \"Y\" or \"N\" only:")
     if play_again.upper()=="Y":
-        os.system("cls" if os.name == "nt" else "clear")
         play()
 play()
 play_again()
